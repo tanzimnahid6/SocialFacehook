@@ -12,8 +12,9 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm();
   const submitForm = (formData) => {
-    console.log(formData);
+
     const user = { ...formData };
+    console.log(user);
     setAuth({ user });
     navigate("/");
   };
@@ -22,8 +23,9 @@ const LoginForm = () => {
       className="border-b border-[#3F3F3F] pb-10 lg:pb-[60px]"
       onSubmit={handleSubmit(submitForm)}
     >
+      <div className="text-center font-bold text-2xl py-4">Login Form</div>
       {/* email */}
-      <Feild className="auth-label" htmlFor="Email" error={errors.email}>
+      <Feild className="auth-label" htmlFor="Email" label="Email" error={errors.email}>
         <input
           {...register("email", { required: "Email ID is Required" })}
           className={`auth-input ${

@@ -7,9 +7,9 @@ const PrivetRote = () => {
   const { auth } = useAuth();
   return (
     <>
+      <Header></Header>
       {auth.user ? (
         <main className="mx-auto max-w-[1020px] py-8">
-            <Header></Header>
           <div className="container">{<Outlet></Outlet>}</div>
         </main>
       ) : (
